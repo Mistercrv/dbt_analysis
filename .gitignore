@@ -1,0 +1,27 @@
+# dbt
+target/
+dbt_modules/
+.log/
+.logs/
+.run/
+.packages
+.dbt/
+
+# Python virtual envs
+venv/
+.env
+.venv/
+
+# IDEs / OS
+.vscode/
+.idea/
+.DS_Store
+
+# tests / caches
+.pytest_cache/
+__pycache__/
+
+# secrets
+*.key
+*.pem
+.env*
