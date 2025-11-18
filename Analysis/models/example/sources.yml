@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: dbt_demo_staging  # nom arbitraire pour ta source dans dbt
+    schema: STAGING         # le schema réel dans PostgreSQL
+    tables:
+      - name: products
+      - name: categories
