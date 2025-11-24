@@ -3,7 +3,7 @@ WITH expediteurs AS (
         'EXP-' || LPAD(shipperid::text, 3, '0') AS expediteur_id,
         shippername as expediteur_name,
         phone as expediteur_phone
-    FROM "STAGING".shippers
+    FROM  {{ source('staging', 'shippers') }}
 )
 SELECT *
 FROM expediteurs

@@ -6,7 +6,7 @@ WITH fournisseurs AS (
         postalcode as fournisseur_codepostale,
         city as fournisseur_ville,
         country as fournisseur_pays
-    FROM "STAGING".suppliers
+    FROM  {{ source('staging', 'suppliers') }}
 )
 SELECT *
 FROM fournisseurs
