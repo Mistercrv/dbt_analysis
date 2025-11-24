@@ -5,7 +5,7 @@ WITH clients AS (
 		address as client_address,
 		city as client_ville,
 		country as client_pays
-    FROM "STAGING".customers
+    FROM {{ source('staging', 'customers') }}
 )
 
 SELECT *

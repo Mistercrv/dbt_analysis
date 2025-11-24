@@ -6,7 +6,7 @@ WITH produits AS (
         categoryid AS categorie_id,
         unit AS unit_origin,
         price AS produit_prix
-    FROM "STAGING".products
+    FROM {{ source('staging', 'products') }}
 )
 
 SELECT *
