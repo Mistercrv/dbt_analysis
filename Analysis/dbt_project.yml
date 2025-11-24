@@ -35,3 +35,10 @@ models:
     transformation:
       +materialized: table
       +schema: shop_silver
+
+seeds:
+  Analysis_shop: 
+    categories_traduit:
+      +enabled: true
+      +database: DBT_DEMO
+      +schema: STAGING
