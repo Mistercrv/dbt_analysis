@@ -5,7 +5,8 @@ WITH commandes_details AS (
         orderid AS commande_id,
         productid AS produit_id,
 		quantity as quatite
-    FROM {{ source('stg', 'order_details') }}
+    FROM {{ ref('snp_commandes_details') }}
+    where dbt_valid_to is null
 )
 
 SELECT *

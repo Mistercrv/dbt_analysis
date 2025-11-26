@@ -6,7 +6,8 @@ WITH produits AS (
         categoryid AS categorie_id,
         unit AS unit_origin,
         price AS produit_prix
-    FROM {{ source('stg', 'products') }}
+    FROM {{ ref ( 'snp_produits' ) }}
+    where dbt_valid_to is null
 )
 
 SELECT *
