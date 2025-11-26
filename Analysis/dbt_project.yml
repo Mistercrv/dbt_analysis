@@ -32,9 +32,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   Analysis_shop:
     # Config indicated by + and applies to all files under models/example/
-    transformation:
+    shop_silver:
       +materialized: table
       +schema: shop_silver
+
+    shop_gold:
+      +materialized: table
+      +schema: shop_gold
 
 seeds:
   Analysis_shop: 
