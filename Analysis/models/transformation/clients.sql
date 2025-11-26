@@ -5,7 +5,8 @@ WITH clients AS (
 		address as client_address,
 		city as client_ville,
 		country as client_pays
-    FROM {{ source('stg', 'customers') }}
+    FROM {{ ref( 'snp_clients') }}
+	where dbt_valid_to is null
 )
 
 SELECT *

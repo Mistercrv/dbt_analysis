@@ -6,7 +6,8 @@ WITH fournisseurs AS (
         postalcode as fournisseur_codepostale,
         city as fournisseur_ville,
         country as fournisseur_pays
-    FROM  {{ source('stg', 'suppliers') }}
+    FROM  {{ ref( 'snp_fournisseurs' ) }}
+    where dbt_valid_to is null
 )
 SELECT *
 FROM fournisseurs
