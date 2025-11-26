@@ -5,7 +5,7 @@ WITH commandes AS (
         orderdate as commande_date,
 		'IMA-' || LPAD(employeeid::text, 3, '0') AS employe_id,
         'EXP-' || LPAD(shipperid::text, 3, '0') AS expediteur_id
-    FROM {{ source('staging', 'orders') }}
+    FROM {{ source('stg', 'orders') }}
 )
 
 SELECT *
