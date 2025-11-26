@@ -38,7 +38,7 @@ models:
 
 seeds:
   Analysis_shop: 
-    categories_traduit:
+    seed_categories_traduit:
       +enabled: true
       +database: DBT_DEMO
       +schema: STAGING

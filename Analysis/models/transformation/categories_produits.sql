@@ -3,7 +3,7 @@ with categorie_produits as(
 		categoryid as categorie_id,
 		categoryname as categorie_name,
 		description
-	from  {{ ref("categories_traduit") }}
+	from  {{ ref("seed_categories_traduit") }}
 ) 
 select *
 from categorie_produits

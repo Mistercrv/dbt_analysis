@@ -8,7 +8,7 @@ with products_cte as (
         supplierid,
         unit,
         price
-    from {{ source('staging', 'products') }}
+    from {{ source('stg', 'products') }}
 
 ),
 
@@ -18,7 +18,7 @@ categories_cte as (
         categoryid,
         categoryname,
         description
-    from {{ source('staging', 'categories') }}
+    from {{ source('stg', 'categories') }}
 
 )
 

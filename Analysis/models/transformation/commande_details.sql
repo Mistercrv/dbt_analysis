@@ -5,7 +5,7 @@ WITH commandes_details AS (
         orderid AS commande_id,
         productid AS produit_id,
 		quantity as quatite
-    FROM {{ source('staging', 'order_details') }}
+    FROM {{ source('stg', 'order_details') }}
 )
 
 SELECT *

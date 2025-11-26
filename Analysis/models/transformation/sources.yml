@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: staging  # nom arbitraire pour ta source dans dbt
+  - name: stg  # nom arbitraire pour ta source dans dbt
     database: DBT_DEMO
     schema: STAGING         # le schema réel dans PostgreSQL
     tables:
