@@ -4,7 +4,7 @@ WITH commandes_details AS (
         orderdetailid AS commande_detail_id,
         orderid AS commande_id,
         productid AS produit_id,
-		quantity as quatite
+		quantity as quantite
     FROM {{ ref('snp_commandes_details') }}
     where dbt_valid_to is null
 )
