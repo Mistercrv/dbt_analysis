@@ -1,6 +1,6 @@
 WITH clients AS (
     SELECT
-        customerid AS client_name,
+        customerid AS client_id,
 		customername as client_nom,
 		address as client_address,
 		city as client_ville,
