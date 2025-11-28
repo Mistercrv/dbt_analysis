@@ -1,3 +1,6 @@
+
+# permet de creer une schema sans tenir compte de la source des données 
+
 {% macro generate_schema_name(custom_schema_name, node) -%}
 
     {%- set default_schema = target.schema -%}

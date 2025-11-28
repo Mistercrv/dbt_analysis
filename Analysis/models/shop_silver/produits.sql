@@ -1,3 +1,9 @@
+
+{{
+    config(
+        schema = var("env_silver", "dev_silver")
+    )
+}}
 WITH produits AS (
     SELECT
         productid AS produit_id,

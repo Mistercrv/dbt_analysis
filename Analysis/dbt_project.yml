@@ -46,3 +46,8 @@ seeds:
       +enabled: true
       +database: DBT_DEMO
       +schema: STAGING
+
+vars:
+  Analysis_shop:
+    env_silver: dev_silver
+    env_gold: dev_gold

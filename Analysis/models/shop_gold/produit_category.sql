@@ -1,4 +1,11 @@
 -- models/my_product_category_model.sql
+
+
+{{
+    config(
+        schema = var("env_gold", "dev_gold")
+    )
+}}
 with products_cte as (
 
     select
