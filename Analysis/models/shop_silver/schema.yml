@@ -1,7 +1,6 @@
-
 version: 2
 
-## test sur  la table clients (le client doit avoir obligatoirement un id, un nom et un pays)
+## test sur la table clients
 models:
   - name: clients
     description: "Table nettoyée des clients provenant de snp_clients"
@@ -18,7 +17,7 @@ models:
         tests:
           - not_null
 
- ## test sur la table des commandes_details
+## test sur la table commandes_details
   - name: commandes_details
     description: "Données nettoyées des détails de commande"
 
@@ -34,26 +33,26 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('commandes')   # si tu as un modèle commandes
-              field: commande_id
+              arguments:
+                to: ref('commandes')
+                field: commande_id
 
       - name: produit_id
         description: "Identifiant du produit"
         tests:
           - not_null
           - relationships:
-              to: ref('produits')    # si tu as un modèle produits
-              field: produit_id
+              arguments:
+                to: ref('produits')
+                field: produit_id
 
       - name: quantite
         description: "Quantité commandée"
         tests:
-        - not_null
-        - quantite_positive   # test custom si tu veux
+          - not_null
+          - quantite_positive   # test custom
 
-
-## les test sur les commandes 
-
+## les tests sur les commandes
   - name: commandes
     description: "Table nettoyée des commandes provenant de snp_commandes"
 
@@ -69,16 +68,16 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('clients')
-              field: client_id
-      
+              arguments:
+                to: ref('clients')
+                field: client_id
+
       - name: commande_date
         description: "Date de la commande"
         tests:
-         - not_null
- 
- # les tests sur la tables produits
+          - not_null
 
+# les tests sur la table produits
   - name: produits
     description: "Table nettoyée des produits provenant de snp_produits"
 
@@ -94,14 +93,14 @@ models:
         tests:
           - not_null
 
-
       - name: categorie_id
         description: "Identifiant de la catégorie"
         tests:
           - not_null
           - relationships:
-              to: ref('categories')
-              field: categorie_id
+              arguments:
+                to: ref('categories_produits')
+                field: categorie_id
 
       - name: unit_origin
         description: "Unité du produit"
@@ -113,8 +112,3 @@ models:
         tests:
           - not_null
           - price_positive
-
-
-
-
-
